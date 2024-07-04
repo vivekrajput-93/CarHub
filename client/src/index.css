@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #446cfc; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5074fc;
+}
+
+
+@media screen and (max-width:1026px) {
+  .hamburger {
+      display: flex;
+      position: relative;
+      border-color: #1e63f9;
+  }
+
+  .nav-menu li{
+      display: none;
+      visibility: hidden;
+  }
+
+  .btn {
+      width: 80%;
+      margin: .8rem;
+  }
+
+  .active {
+      position: absolute;
+      flex-direction: column;
+      top: 70px;
+      right:2rem;
+      width: 50%;
+      height: 250px;
+      transition: 0.6s;
+      z-index: 2;
+      background: #1e63f9;
+      border-left: 1px solid #eee;
+      display: flex;
+      color: #eee;
+      align-items: center;
+      justify-content: start;
+      border-radius: 10px;
+  }
+  .active li{
+      padding: 15px;
+      font-weight: 600;
+  }
+
+}
+
+
+
+/* START: Footer styles */
+
+  
+  .footer__links-container {
+    @apply flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10;
+  }
+  
+  .footer__rights {
+    @apply flex flex-col justify-start items-start gap-6;
+  }
+  
+  .footer__links {
+    @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
+  }
+  
+  .footer__link {
+    @apply flex flex-col gap-6 text-base min-w-[170px];
+  }
+  
+  .footer__copyrights {
+    @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
+  }
+  
+  .footer__copyrights-link {
+    @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+  }
+
+
+
+.car-details button {
+  @apply  w-[200px] py-2 text-center bg-neutral-100 max-[768px]:w-full focus:bg-blue-600 focus:text-white
+}
+
+
+
+
+
+
+/* Choose us section */ 
+
+
+.card {
+  @apply w-[500px] shadow-lg bg-white h-[300px] flex flex-col gap-y-6 px-12 py-14 max-[576px]:w-full max-[576px]:h-full 
+}
+
+.card p {
+  @apply text-[1.2rem] font-bold
+}
+
+.sub-card {
+  @apply flex justify-between
+}
+
+
+.person-card {
+  @apply flex justify-center items-center gap-x-5
+}
+
+.person-card h3 {
+  @apply font-bold text-lg
+}
+
+
+ /* Go to Top button */
+
+ .icon {
+  animation:  goto 1.2s linear infinite alternate;
+ }
+
+ @keyframes goto {
+   0% {
+     transform:  translateY(-0.3rem);
+   }
+
+   100% {
+    transform:  translateY(.4rem);
+   }
+ }
+
+
+ /* Authentication section  */
+
+ .input-container div {
+    @apply flex items-center gap-y-5 border-b  gap-x-4 mb-4 pb-2
+ }
+
+ .input-container div input {
+  @apply outline-none font-medium
+ }
+
+ .input-container  span {
+  @apply font-bold text-3xl relative bottom-5
+ }
+
+
+ input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* Logout section */ 
+
+.login-dropdown {
+  position: absolute;
+  top: 3.8rem;
+  right: 1.5rem;
+  width: 120px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+
+}
+
+.login-dropdown li {
+  @apply cursor-pointer w-full text-center 
+}
+
+.forgot {
+  @apply text-base font-normal
+}
+
+.admin-list a  {
+  @apply flex items-center gap-2 font-semibold cursor-pointer
+}
+
+.product-info div {
+  @apply flex flex-col  items-center gap-1 justify-center 
+}
+
+.car-button {
+  @apply bg-green-500
+}
+
+
+/* About Section */
+
+.about-card {
+  position: relative;
+  background-image: url("./assets/back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 60%;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* White with 60% opacity */
+}
+
+/* Form section */ 
+
+.form-bg {
+  background-image: url("./assets/book-bg.png");
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-size: cover;
+
+  
+}
+.form-section {
+  @apply flex w-full  flex-wrap items-center px-5 gap-2 mt-8
+}
+
+.form-section div {
+  @apply flex flex-col gap-2
+}
+
+.form-section div div {
+  @apply flex flex-row  gap-3 mb-3
+}
+
+.form-section div div span {
+  @apply text-lg font-semibold
+}
+
+.modal {
+  width: 200px;
+  background-color: blue;
+}
