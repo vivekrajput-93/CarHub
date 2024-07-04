@@ -12,7 +12,7 @@ const About = () => {
         </h2>
       </div>
       <div className="text-center py-10 px-44 max-[768px]:px-4">
-        <h3 className="mb-3 text-3xl font-bold">Who are we ?</h3>
+        <h3 className="mb-3 text-3xl font-bold">Who are we ? We are Vivek</h3>
         <p className="text-neutral-500 font-medium">
           Your ultimate destination for seamless and reliable car rentals. We
           pride ourselves on our extensive fleet, exceptional customer service,
