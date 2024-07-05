@@ -70,10 +70,10 @@ const UserForm = () => {
             <span>Select a car</span>
           </div>
           <Select
-            placeholder="Select a product"
+            placeholder="Select a Car"
             size="large"
             showSearch
-            className="w-[380px] h-10 max-[786px]:w-full"
+            className="w-[380px] h-10 text-sm font-bold max-[786px]:w-full"
             onChange={(value) =>
               setSelectedProduct(
                 products.find((product) => product.mark === value)
@@ -81,7 +81,7 @@ const UserForm = () => {
             }
           >
             {products?.map((product) => (
-              <Select.Option key={product._id} value={product.mark}>
+              <Select.Option key={product._id}  value={product.mark}>
                 {product.name}
               </Select.Option>
             ))}
@@ -216,9 +216,9 @@ const UserForm = () => {
       >
         {selectedProduct && (
           <div className="flex justify-between px-5">
-            <div className="flex flex-col gap-5">
-              <div>
-                <div className="flex gap-2">
+            <div className="flex flex-col gap-5 w-1/2">
+              <div className="flex flex-col gap-4">
+                <div className="flex gap-2 text-xl font-bold">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -233,13 +233,13 @@ const UserForm = () => {
                   </svg>
                   <span>Pick-Up Date & Time:</span>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 pl-2 font-semibold text-custom-gray" >
                   <h3>{pickUpDate}</h3> /{" "}
                   <input type="time" className="border" />
                 </div>
               </div>
-              <div>
-                <div className="flex gap-2">
+              <div className="flex flex-col gap-4">
+                <div className="flex gap-2 text-xl font-bold">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -254,13 +254,13 @@ const UserForm = () => {
                   </svg>
                   <span>Drop-off Date & Time:</span>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 pl-2 font-semibold text-custom-gray">
                   <h3>{dropOffDate}</h3> /{" "}
                   <input type="time" className="border" />
                 </div>
               </div>
-              <div>
-                <div className="flex gap-2">
+              <div className="flex flex-col gap-3">
+                <div className="flex gap-2 text-xl font-bold">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -275,10 +275,10 @@ const UserForm = () => {
                   </svg>
                   <span>Pick-up Location:</span>
                 </div>
-                <h3>{pickUpLocation}</h3>
+                <h3 className="pl-2 font-semibold text-custom-gray">{pickUpLocation}</h3>
               </div>
-              <div>
-                <div className="flex gap-2">
+              <div className="flex flex-col gap-3">
+                <div className="flex gap-2 font-bold text-xl">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -293,15 +293,18 @@ const UserForm = () => {
                   </svg>
                   <span>Drop-off Location:</span>
                 </div>
-                <h3>{dropOffLocation}</h3>
+                <h3 className="pl-2 font-semibold text-custom-gray">{dropOffLocation}</h3>
               </div>
             </div>
-            <div className="">
+            <div className="w-1/2 flex flex-col gap-5 justify-center items-center">
+              <h3 className="font-semibold text-lg"><span className="text-blue-600 font-bold text-lg">Car-</span> {selectedProduct.mark} </h3>
               <img
                 src={`http://localhost:5002/api/v1/auth/product-photo/${selectedProduct._id}`}
                 alt={selectedProduct.mark}
-                className="w-[200px]"
+                className="w-[360px]"
               />
+
+              <button className="border bg-blue-600 font-semibold text-lg w-1/2 py-1 shadow-md text-white ">Book Now</button>
             </div>
           </div>
         )}
