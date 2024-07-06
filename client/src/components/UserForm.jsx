@@ -3,6 +3,8 @@ import { Select } from "antd";
 import axios from "axios";
 import { toast } from "react-toastify";
 import ReservationModal from "./ReservationModal"; // Import the CustomModal component
+import { useAuth } from "../context/auth";
+
 
 const UserForm = () => {
   const [products, setProducts] = useState([]);
@@ -12,6 +14,7 @@ const UserForm = () => {
   const [pickUpDate, setPickUpDate] = useState("");
   const [dropOffDate, setDropOffDate] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [auth, setAuth] = useAuth("");
 
   const getAllProducts = async () => {
     try {
@@ -44,6 +47,12 @@ const UserForm = () => {
       toast.error("Please fill all the fields");
     }
   };
+
+
+  const handleBooking = () => {
+    setIsModalVisible(false);
+    toast.success("Check your email to confirm an order.")
+  }
 
   return (
     <div className="form-bg h-[380px] block m-auto rounded-md mt-20 w-[1200px] max-[786px]:w-full max-[786px]:h-fit max-[786px]:pb-8 max-[786px]:mb-32">
@@ -205,6 +214,7 @@ const UserForm = () => {
           <button
             onClick={handleSearch}
             className="w-[380px] h-10 mt-12 bg-blue-600 text-white font-semibold text-lg border max-[786px]:w-full"
+            disabled={!auth?.user}
           >
             Search
           </button>
@@ -304,7 +314,7 @@ const UserForm = () => {
                 className="w-[360px]"
               />
 
-              <button className="border bg-blue-600 font-semibold text-lg w-1/2 py-1 shadow-md text-white ">Book Now</button>
+              <button className="border bg-blue-600 font-semibold text-lg w-1/2 py-1 shadow-md text-white " onClick={handleBooking}>Book Now</button>
             </div>
           </div>
         )}

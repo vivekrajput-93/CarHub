@@ -98,7 +98,7 @@ const Home = () => {
               <img src={comma} alt="" width={50} height={50} className="object-contain" />
             </div>
           </div>
-          <div className="card">
+          <div className="card ">
             <p>"The car was in great condition and made our trip even better. Highly recommend for this car rental website!"</p>
             <div className="sub-card">
               <div className="person-card">

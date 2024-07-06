@@ -39,12 +39,12 @@ const CarDetails = () => {
         </p>
       </div>
       <div className="flex gap-x-6 justify-between  px-10 my-16 max-[768px]:flex-col max-[768px]:gap-y-10">
-        <div className="car-details flex flex-col w-fit  gap-y-5">
+        <div className="car-details flex flex-col w-fit  gap-y-5 max-[786px]:w-full">
           {products.slice(0, 6).map((pro) => (
             <button
               key={pro._id}
               onClick={() => handleButtonClick(pro)}
-              className="py-4 border"
+              className="py-4 border bg-blue-600 "
             >
               {pro.mark}
             </button>

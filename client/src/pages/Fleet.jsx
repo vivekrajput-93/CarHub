@@ -96,12 +96,14 @@ const Fleet = () => {
                     <span className="text-sm font-semibold">{pro.fuel}</span>
                   </div>
                 </div>
+                <Link to={"/"} className="mt-1 text-center  py-2 bg-blue-600 text-white font-medium w-full rounded-md shadow-md shadow-blue-400"
+                  >
                 <button
-                  className="mt-1  py-2 bg-blue-600 text-white font-medium w-full rounded-md shadow-md shadow-blue-400"
-                 
+                  
                 >
-                  Book now
+                 Book Now
                 </button>
+                 </Link>
               </div>
             </Link>
           ))}

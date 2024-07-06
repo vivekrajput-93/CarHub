@@ -106,7 +106,7 @@
 
 
 .car-details button {
-  @apply  w-[200px] py-2 text-center bg-neutral-100 max-[768px]:w-full focus:bg-blue-600 focus:text-white
+  @apply  w-[200px] py-2 text-center bg-neutral-100 max-[768px]:w-full focus:bg-blue-600 focus:text-white max-[786px]:w-full
 }
 
 
